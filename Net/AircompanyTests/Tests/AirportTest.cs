@@ -69,7 +69,7 @@ namespace AircompanyTests.Tests
                     nextPlaneMaxLoadCapacityIsHigherThanCurrent = false;
                 }
             }
-            Assert.That(nextPlaneMaxLoadCapacityIsHigherThanCurrent==true);
+            Assert.That(nextPlaneMaxLoadCapacityIsHigherThanCurrent);
         }
     }
 }
