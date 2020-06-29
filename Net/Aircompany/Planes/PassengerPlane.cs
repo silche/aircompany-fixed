@@ -12,11 +12,11 @@ namespace Aircompany.Planes
             _passengersCapacity = passengersCapacity;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object militaryPlane)
         {
-            var plane = obj as PassengerPlane;
+            var plane = militaryPlane as PassengerPlane;
             return plane != null &&
-                   base.Equals(obj) &&
+                   base.Equals(militaryPlane) &&
                    _passengersCapacity == plane._passengersCapacity;
         }
 
