@@ -54,7 +54,7 @@ namespace Aircompany
             for (int i = 0; i < militaryPlanes.Count; i++)
             {
                 MilitaryPlane plane = militaryPlanes[i];
-                if (plane.PlaneTypeIs() == MilitaryType.TRANSPORT)
+                if (plane.PlaneTypeIs() == MilitaryType.Transport)
                 {
                     transportMilitaryPlanes.Add(plane);
                 }
