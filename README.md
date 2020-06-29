@@ -1,6 +1,7 @@
 # aircompany-fixed
 ## Description
 Project with refactored code
+
 Completed practical task on the training module *Clean Code* *(Automation GroLab)*
 
 ### Task of this project
