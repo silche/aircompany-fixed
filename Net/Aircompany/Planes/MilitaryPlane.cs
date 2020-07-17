@@ -4,41 +4,31 @@ namespace Aircompany.Planes
 {
     public class MilitaryPlane : Plane
     {
-        public readonly MilitaryType MilitaryPlaneType;
+        public MilitaryPlaneType MilitaryPlaneType { get; }
 
-        public MilitaryPlane(string model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType type)
-            : base(model, maxSpeed, maxFlightDistance, maxLoadCapacity)
+        public MilitaryPlane(Plane plane, MilitaryPlaneType militaryPlaneType)
+            : base(plane.GetModel(), plane.GetMaxSpeed(), plane.GetMaxFlightDistance(), plane.GetMaxFlightDistance())
         {
-            MilitaryPlaneType = type;
+            MilitaryPlaneType = militaryPlaneType;
         }
 
-        public override bool Equals(object militaryPlane)
+        public override bool Equals(object plane)
         {
-            var plane = militaryPlane as MilitaryPlane;
-            return plane != null &&
-                   base.Equals(militaryPlane) &&
-                   MilitaryPlaneType == plane.MilitaryPlaneType;
+            return plane is MilitaryPlane &&
+                   base.Equals(plane) &&
+                   MilitaryPlaneType == ((MilitaryPlane) plane).MilitaryPlaneType;
         }
 
         public override int GetHashCode()
         {
             var hashCode = 1701194404;
             hashCode = hashCode * -1521134295 + base.GetHashCode();
-            hashCode = hashCode * -1521134295 + MilitaryPlaneType.GetHashCode();
-            return hashCode;
+            return hashCode * -1521134295 + MilitaryPlaneType.GetHashCode();
         }
-
-        public MilitaryType PlaneTypeIs()
-        {
-            return MilitaryPlaneType;
-        }
-
-
+        
         public override string ToString()
         {
-            return base.ToString().Replace("}",
-                    ", type=" + MilitaryPlaneType +
-                    '}');
+            return base.ToString().Replace("}", ", type=" + MilitaryPlaneType + '}');
         }        
     }
 }
